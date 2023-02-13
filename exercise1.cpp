@@ -11,8 +11,28 @@ in the template class HetrogenousPair*/
 
 using namespace std;
 
+template <class T1, class T2>
 class HetrogenousPair{
+    T1 first;
+    T2 second;
 
+public:
+    HetrogenousPair(){}
+    HetrogenousPair(T1 first, T2 second){
+        this->first = first;
+        this->second = second;
+    }
+
+    void set_first_value(T1 val){
+        first = val;
+    }
+
+    void set_second_value(T2 val){
+        second = val;
+    }
+
+    T1 get_first_value() const{ return first; }
+    T2 get_second_value() const{ return second; }
 };
 
 int main(){

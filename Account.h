@@ -37,3 +37,5 @@ public:
     cout << "A/C no: " << accountNumber << " Balance = " << balance << "$\n";
   }
 };
+
+int Account::numOfAccounts = 0;
