@@ -3,8 +3,8 @@ user defined data type. Student class holds important informati-
 on about the Student entity like netID, name, age, and gender. 
 Add few instances of Student to list<Student>. Sort the 
 list<Student> by student name in ascending or descending order 
-using sort method from <algorithm> header. Create a print funct-
-ion inside Student and access it via list iterator.*/
+using std::list::sort(). Create a print function inside Student
+and access it via list iterator.*/
 
 #include <list>
 #include "Student.h"
