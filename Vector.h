@@ -117,9 +117,6 @@ public:
         }
         else
             this->size--;
-            
-        if(empty())
-            this->array = nullptr;
     }
 
     void pop_front(){ // removes the first element and shifts everything back
@@ -133,9 +130,6 @@ public:
             this->array[i] = this->array[i+1];
         }
         this->size--;
-
-        if(empty())
-            this->array = nullptr;
     }
 
     void delete_at(int index){ // removes the element at the specified index and shifts everything back
