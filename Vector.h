@@ -112,7 +112,6 @@ public:
     void pop_back(){ // removes the last element
         if(empty()){
             cout << "Vector is empty\n";
-            this->array = nullptr;
             return;
         }
         else
@@ -122,7 +121,6 @@ public:
     void pop_front(){ // removes the first element and shifts everything back
         if(empty()){
             cout << "Vector is empty\n";
-            this->array = nullptr;
             return;
         }
 
