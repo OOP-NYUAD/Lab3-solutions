@@ -110,19 +110,22 @@ public:
     }
 
     void pop_back(){ // removes the last element
-        if(empty())
+        if(empty()){
             cout << "Vector is empty\n";
+            this->array = nullptr;
+            return;
+        }
         else
             this->size--;
-
-        if(empty()){
+            
+        if(empty())
             this->array = nullptr;
-        }
     }
 
     void pop_front(){ // removes the first element and shifts everything back
         if(empty()){
             cout << "Vector is empty\n";
+            this->array = nullptr;
             return;
         }
 
@@ -131,9 +134,8 @@ public:
         }
         this->size--;
 
-        if(empty()){
+        if(empty())
             this->array = nullptr;
-        }
     }
 
     void delete_at(int index){ // removes the element at the specified index and shifts everything back
