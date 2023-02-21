@@ -14,7 +14,6 @@ ded automatically. Vectors have the follownig properties:
 The member methods needed for the Vector class are defined below.
 Note this needs to be a TEMPLATE CLASS
 */
-
 using namespace std;
 
 template <class T>
@@ -31,7 +30,6 @@ private:
         for(int i = 0; i < size; i++){
             temp[i] = this->array[i]; 
         }
-
         delete[] this->array;
         this->array = temp;
         cap *= 2;
@@ -50,7 +48,8 @@ public:
         if(array == nullptr){
             this->size = 1;
             this->cap  = 1;
-            this->array = new T(data);
+            this->array = new T[1];
+            this->array[0] = data;
             return;
         }
 
@@ -62,10 +61,11 @@ public:
     void push_front(const T &data){ // appends an element to the beginning/start of the vector
         if(array == nullptr){
             this->size = 1;
-            this->cap  = 1;            
-            this->array = new T(data);
+            this->cap  = 1;
+            this->array = new T[1];
+            this->array[0] = data;
             return;
-        }  
+        }
 
         if(this->size == this->cap) copy();
 
@@ -77,16 +77,19 @@ public:
     }
 
     void insert(const int index, const T &data){ // places the element at the given index and shifts everything to the right of it
+        if(array == nullptr){
+            this->size = 1;
+            this->cap  = 1;
+            this->array = new T[1];
+            this->array[0] = data;
+            return;
+        }
+
         if(index > size || index < 0){
             cout << "Specified index exceeds bounds of array\n";
             return;
         }
 
-        if(array == nullptr){
-            this->size = this->cap = 1;
-            this->array = new T(data);
-            return;
-        }  
 
         if(this->size == this->cap) copy();
 
